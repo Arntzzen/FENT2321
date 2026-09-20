@@ -17,7 +17,7 @@ V1 = 12.0              # wind speed [m/s]
 R = 0.30               # rotor radius [m]
 N = 15                 # number of blade elements
 
-lambda_des = 4.0       # design tip-speed ratio
+lambda_des = 6.5       # design tip-speed ratio
 
 rho = 1.2              # air density [kg/m^3]
 mu = 1.47e-5           # dynamic viscosity [kg/(m s)]

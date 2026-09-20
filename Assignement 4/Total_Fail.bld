@@ -1,0 +1,31 @@
+----------------------------------------QBlade Blade Definition File------------------------------------------------
+Generated with : QBlade CE v2.0.9.7b_beta windows
+Archive Format: 310043
+Time : 17:39:47
+Date : 20.09.2026
+
+----------------------------------------Object Name-----------------------------------------------------------------
+Total Fail                                         OBJECTNAME         - the name of the blade object
+
+----------------------------------------Parameters------------------------------------------------------------------
+HAWT                                               ROTORTYPE          - the rotor type
+false                                              INVERTEDFOILS      - invert the airfoils? (only VAWT) [bool]
+2                                                  NUMBLADES          - number of blades
+
+----------------------------------------Blade Data------------------------------------------------------------------
+POS_[m]             CHORD_[m]           TWIST_[deg]         OFFSET_Y_[m]        OFFSET_X_[m]        P_AXIS_Y_[-]        P_AXIS_X_[-]        POLAR_FILE          
+0.03000             0.12600             39.55               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.05010             0.14620             31.62               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.06990             0.14440             25.40               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.09000             0.13450             20.62               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.11010             0.12260             16.94               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.12990             0.11130             14.07               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.15000             0.10110             11.79               0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.17010             0.09220             9.95                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.18990             0.08450             8.44                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.21000             0.07790             7.19                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.23010             0.07210             6.12                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.24990             0.06700             5.22                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.27000             0.06260             4.43                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+0.30000             0.08450             8.44                0.00000             0.00000             0.50000             0.00000             Polars/Circular_Foil_MultiRePolar.plr
+
