@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1789923819.27599 "c:/Users/marku/Desktop/FENT2321/Assignement 4/assignment4.tex" "assignment4.pdf" "assignment4" 1789923821.81377 0
-  "assignment4.aux" 1789923821 2757 ccd1da33ce7bbb5ca75873c4ef69bc11 "pdflatex"
-  "assignment4.out" 1789923821 802 291754094f5fec7bf9f41699402ee38d "pdflatex"
-  "assignment4.tex" 1789923818 6078 7359acce806aab5293ae997085be6381 ""
-  "assignment4.toc" 1789923821 460 9424abd1c2789fdfcf7243da6ce28f92 "pdflatex"
-  "c:/Users/marku/Desktop/FENT2321/Assignement 4/assignment4.tex" 1789923818 6078 7359acce806aab5293ae997085be6381 ""
+["pdflatex"] 1790265085.8288 "c:/Users/marku/Desktop/FENT2321/Assignment 4/assignment4.tex" "assignment4.pdf" "assignment4" 1790265088.09432 0
+  "assignment4.aux" 1790265087 2630 821f3c65301614740bdfc3461ec444aa "pdflatex"
+  "assignment4.out" 1790265087 685 c9a3d2ffee8e7c6a2aff2d91f1946f75 "pdflatex"
+  "assignment4.tex" 1790265082 5441 757406d8a5b18b1fb6e467c6e8774ba6 ""
+  "assignment4.toc" 1790265087 374 b06ecbc5e2f5724d22c0a6da1daade1d "pdflatex"
+  "c:/Users/marku/Desktop/FENT2321/Assignment 4/assignment4.tex" 1790265082 5441 757406d8a5b18b1fb6e467c6e8774ba6 ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1773087737 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1773087737 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1773087737 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -232,10 +232,10 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1773090209 5618266 85c272d09f6df628d158699e137c8ff6 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1773090363 3636366 8cae5b719323769a08130aa44b365374 ""
   "c:/texlive/2026/texmf.cnf" 1773090181 713 e69b156964470283e0530f5060668171 ""
-  "figures/Cp.JPG" 1789921484 35005 9a72be83d9dd6e721f82c9ca2fa08096 ""
-  "figures/Ct.JPG" 1789921510 42046 0e09d7b5c846bee949155813c16dd44a ""
-  "figures/blade.JPG" 1789920280 16121 5a2e73106f955b3efc2eaea0020be15d ""
-  "figures/geometry_table.JPG" 1789920339 91642 3d4b70732661e1ad9533affb7d799bec ""
+  "figures/Cp_new.JPG" 1790264041 31199 2565e494c0ca6fc03388f4018f727a3c ""
+  "figures/Ct_new.JPG" 1790264059 36908 77bd37470c77cac807cf750f451a2ff6 ""
+  "figures/blade_update.JPG" 1790263971 12733 a82c241750eb54b1db65f74f1415ca13 ""
+  "figures/geometry_table_new.JPG" 1790264091 90344 5a4a589325d06bcc1b047aa8bdfc7f2e ""
   (generated)
   "assignment4.aux"
   "assignment4.log"

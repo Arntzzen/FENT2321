@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.9)  20 SEP 2026 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.9)  24 SEP 2026 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/marku/Desktop/FENT2321/Assignement 4/assignment4.tex"
-(c:/Users/marku/Desktop/FENT2321/Assignement 4/assignment4.tex
+**"c:/Users/marku/Desktop/FENT2321/Assignment 4/assignment4.tex"
+(c:/Users/marku/Desktop/FENT2321/Assignment 4/assignment4.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (c:/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -825,30 +825,30 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [2
 
 ]
-<figures/geometry_table.JPG, id=49, 635.37375pt x 286.82156pt>
-File: figures/geometry_table.JPG Graphic file (type jpg)
-<use figures/geometry_table.JPG>
-Package pdftex.def Info: figures/geometry_table.JPG  used on input line 93.
-(pdftex.def)             Requested size: 386.96027pt x 174.68954pt.
-<figures/blade.JPG, id=50, 386.19281pt x 438.8897pt>
-File: figures/blade.JPG Graphic file (type jpg)
-<use figures/blade.JPG>
-Package pdftex.def Info: figures/blade.JPG  used on input line 105.
-(pdftex.def)             Requested size: 386.96027pt x 439.76591pt.
+<figures/geometry_table_new.JPG, id=44, 621.07031pt x 293.59688pt>
+File: figures/geometry_table_new.JPG Graphic file (type jpg)
+<use figures/geometry_table_new.JPG>
+Package pdftex.def Info: figures/geometry_table_new.JPG  used on input line 92.
+(pdftex.def)             Requested size: 386.96027pt x 182.92415pt.
+<figures/blade_update.JPG, id=45, 305.64188pt x 402.75468pt>
+File: figures/blade_update.JPG Graphic file (type jpg)
+<use figures/blade_update.JPG>
+Package pdftex.def Info: figures/blade_update.JPG  used on input line 104.
+(pdftex.def)             Requested size: 386.96027pt x 509.9318pt.
  [3
 
-{c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./figures/geometry_table.JPG>] [4 <./figures/blade.JPG>]
-<figures/Cp.JPG, id=67, 593.21625pt x 306.39468pt>
-File: figures/Cp.JPG Graphic file (type jpg)
-<use figures/Cp.JPG>
-Package pdftex.def Info: figures/Cp.JPG  used on input line 162.
-(pdftex.def)             Requested size: 386.96027pt x 199.86949pt.
-<figures/Ct.JPG, id=68, 590.205pt x 307.1475pt>
-File: figures/Ct.JPG Graphic file (type jpg)
-<use figures/Ct.JPG>
-Package pdftex.def Info: figures/Ct.JPG  used on input line 175.
-(pdftex.def)             Requested size: 386.96027pt x 201.38226pt.
- [5 <./figures/Cp.JPG> <./figures/Ct.JPG>] (./assignment4.aux)
+ <./figures/geometry_table_new.JPG>] [4{c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./figures/blade_update.JPG>]
+<figures/Cp_new.JPG, id=60, 589.4522pt x 304.13625pt>
+File: figures/Cp_new.JPG Graphic file (type jpg)
+<use figures/Cp_new.JPG>
+Package pdftex.def Info: figures/Cp_new.JPG  used on input line 160.
+(pdftex.def)             Requested size: 386.96027pt x 199.65852pt.
+<figures/Ct_new.JPG, id=61, 588.69937pt x 306.39468pt>
+File: figures/Ct_new.JPG Graphic file (type jpg)
+<use figures/Ct_new.JPG>
+Package pdftex.def Info: figures/Ct_new.JPG  used on input line 173.
+(pdftex.def)             Requested size: 386.96027pt x 201.39827pt.
+ [5{c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./figures/Cp_new.JPG>] [6 <./figures/Ct_new.JPG>] (./assignment4.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -858,21 +858,21 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `assignment4.out' has not changed.
-(rerunfilecheck)             Checksum: 291754094F5FEC7BF9F41699402EE38D;802.
+(rerunfilecheck)             Checksum: C9A3D2FFEE8E7C6A2AFF2D91F1946F75;685.
  ) 
 Here is how much of TeX's memory you used:
- 40278 strings out of 467524
- 952373 string characters out of 5423189
- 1456411 words of memory out of 5000000
- 68541 multiletter control sequences out of 15000+600000
+ 40277 strings out of 467524
+ 952473 string characters out of 5423189
+ 1455411 words of memory out of 5000000
+ 68540 multiletter control sequences out of 15000+600000
  671877 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,118p,1056b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,118p,1055b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb>
-Output written on assignment4.pdf (5 pages, 361302 bytes).
+Output written on assignment4.pdf (6 pages, 343979 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  17 named destinations out of 1000 (max. 500000)
- 24649 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 24641 words of extra memory for PDF output out of 24883 (max. 10000000)
 

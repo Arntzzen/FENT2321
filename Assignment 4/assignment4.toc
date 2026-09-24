@@ -3,4 +3,3 @@
 \contentsline {subsection}{\numberline {1.1}Blade geometry}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Design-point performance}{4}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Performance curves}{5}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Discussion}{5}{subsubsection.1.3.1}%

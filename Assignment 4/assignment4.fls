@@ -1,8 +1,8 @@
-PWD c:/Users/marku/Desktop/FENT2321/Assignement 4
+PWD c:/Users/marku/Desktop/FENT2321/Assignment 4
 INPUT c:/texlive/2026/texmf.cnf
 INPUT c:/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/marku/Desktop/FENT2321/Assignement 4/assignment4.tex
+INPUT c:/Users/marku/Desktop/FENT2321/Assignment 4/assignment4.tex
 OUTPUT assignment4.log
 INPUT c:/texlive/2026/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -395,28 +395,28 @@ INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 OUTPUT assignment4.toc
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT ./figures/geometry_table.JPG
-INPUT ./figures/geometry_table.JPG
-INPUT ./figures/geometry_table.JPG
-INPUT ./figures/geometry_table.JPG
-INPUT ./figures/geometry_table.JPG
-INPUT ./figures/blade.JPG
-INPUT ./figures/blade.JPG
-INPUT ./figures/blade.JPG
-INPUT ./figures/blade.JPG
-INPUT ./figures/blade.JPG
+INPUT ./figures/geometry_table_new.JPG
+INPUT ./figures/geometry_table_new.JPG
+INPUT ./figures/geometry_table_new.JPG
+INPUT ./figures/geometry_table_new.JPG
+INPUT ./figures/geometry_table_new.JPG
+INPUT ./figures/blade_update.JPG
+INPUT ./figures/blade_update.JPG
+INPUT ./figures/blade_update.JPG
+INPUT ./figures/blade_update.JPG
+INPUT ./figures/blade_update.JPG
 INPUT c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT ./figures/Cp_new.JPG
+INPUT ./figures/Cp_new.JPG
+INPUT ./figures/Cp_new.JPG
+INPUT ./figures/Cp_new.JPG
+INPUT ./figures/Cp_new.JPG
+INPUT ./figures/Ct_new.JPG
+INPUT ./figures/Ct_new.JPG
+INPUT ./figures/Ct_new.JPG
+INPUT ./figures/Ct_new.JPG
+INPUT ./figures/Ct_new.JPG
 INPUT c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-INPUT ./figures/Cp.JPG
-INPUT ./figures/Cp.JPG
-INPUT ./figures/Cp.JPG
-INPUT ./figures/Cp.JPG
-INPUT ./figures/Cp.JPG
-INPUT ./figures/Ct.JPG
-INPUT ./figures/Ct.JPG
-INPUT ./figures/Ct.JPG
-INPUT ./figures/Ct.JPG
-INPUT ./figures/Ct.JPG
 INPUT assignment4.aux
 INPUT ./assignment4.out
 INPUT ./assignment4.out

@@ -78,19 +78,18 @@
 
 The final blade geometry obtained from the design procedure is
 shown in Figure~\ref{fig:blade-geometry}. The corresponding
-blade visualisation is shown in Figure~\ref{fig:blade-visualisation}.
-Originally, I had bigger values for chord length, and thus, more cells saying "Too long chord lenght".
-This was with $\lambda_{des} = 4.0$. After increasing $\lambda_{des}$ to the maximum constraint value of
-6.0 in hopes of lowering the chord lenght to within the constrained values, this is
-the best I managed. I believe misunderstanding in Assignment 3 on my part is the reason for these faulty values.
-This is therefore also why the blade looks so strange and not ideal at all.
+blade visualisation is shown in Figure~\ref{fig:blade-visualisation}. For this
+resubmission I have manually adjusted the values for chord length for each section
+to comply with the constraints. These have all been adjusted by a
+factor of 68.33\% to keep the ratios of each
+blade section equla to the original model.
 
 % ---------- Table: Final blade geometry ----------
 \begin{figure}[H]
     \centering
     \includegraphics[
         width=0.85\textwidth
-    ]{figures/geometry_table.JPG}
+    ]{figures/geometry_table_new.JPG}
     
     \caption{Visualisation of the final blade geometry.}
     \label{fig:blade-geometry}
@@ -102,7 +101,7 @@ This is therefore also why the blade looks so strange and not ideal at all.
     \centering
     \includegraphics[
         width=0.85\textwidth
-    ]{figures/blade.JPG}
+    ]{figures/blade_update.JPG}
     
     \caption{Visualisation of the final blade geometry.}
     \label{fig:blade-visualisation}
@@ -120,9 +119,8 @@ point using the simulation including Prandtl tip losses. The
 resulting performance quantities are summarised in
 Table~\ref{tab:design-point-performance}. The values for $C_P$ and $C_T$
 are without the Prandtl tip losses as this achieved the biggest values in my case.
-It is clearly wrong as the turbine at the design TSR will spin at 2 483 RPM, much
-greater than any wind turbine and closer to the centrifuge in washing machines.
-I also expected a higher torque (of course at a lower RPM) at least >1NM.
+The new simulation gives better values for the parameters in the table as reasonable RPM and
+torque above 1Nm.
 
 \begin{table}[H]
     \centering
@@ -134,8 +132,8 @@ I also expected a higher torque (of course at a lower RPM) at least >1NM.
         $\lambda_{\mathrm{design}}$ & 6.5 \\
         $C_{P,\mathrm{max}}$ & ~0.345 \\
         $C_T$ & 0.842 \\
-        RPM & 2 483 \\
-        Torque [Nm] & 0.509 \\
+        RPM & 500 \\
+        Torque [Nm] & 1.2 \\
         \hline
     \end{tabular}
     \caption{Performance at the design point including Prandtl tip losses.}
@@ -150,16 +148,16 @@ I also expected a higher torque (of course at a lower RPM) at least >1NM.
 
 I tried to follow the tutorial for the $C_P$ and $C_T$ simulations,
 both with and without the Prandtl tip losses method. The red line in Figure~\label{fig:Cp_tipSpeedRatio}
-and Figure~\label{fig:Ct_tipSpeedRatio} correspond to the Prandtl method and the blue, thinner line
-is the "normal" method without Prandtl. I assume the Prandtl method graph should normally give
-higher values for $C_P$ and $C_T$, and I am aware this is not the case for me.
+and Figure~\label{fig:Ct_tipSpeedRatio} correspond to the Prandtl method and the yellow line
+is the "normal" method without Prandtl. The graphs are a little better than the first
+submission, but still not great.
 
 % ---------- CP curve ----------
 \begin{figure}[H]
     \centering
     \includegraphics[
         width=0.85\textwidth
-    ]{figures/Cp.JPG}
+    ]{figures/Cp_new.JPG}
     
     \caption{Power coefficient $C_P$ as a function of
     tip-speed ratio $\lambda$, with and without Prandtl tip losses.}
@@ -172,18 +170,12 @@ higher values for $C_P$ and $C_T$, and I am aware this is not the case for me.
     \centering
     \includegraphics[
         width=0.85\textwidth
-    ]{figures/Ct.JPG}
+    ]{figures/Ct_new.JPG}
     
     \caption{Thrust coefficient $C_T$ as a function of
     tip-speed ratio $\lambda$, with and without Prandtl tip losses.}
     \label{fig:Ct_tipSpeedRatio}
 \end{figure}
 
-
-\subsubsection{Discussion}
-
-I think the two graphs for $C_P$ and $C_T$ vs tip-speed ratio clearly shows
-that my model has mistakes, but I am not sure where I make the mistakes.
-therefore, I can not discuss any specifics.
 
 \end{document}
