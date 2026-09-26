@@ -1,0 +1,209 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+% \usepackage{siunitx}
+
+% ------------------------------------------------------------
+% Custom commands
+% ------------------------------------------------------------
+\renewcommand{\thesubsection}{\alph{subsection})}
+\renewcommand{\thesection}{}
+\newcommand{\degCel}{\,^\circ\mathrm{C}}
+\newcommand{\Frac}[2]{\left(\frac{#1}{#2}\right)}
+
+
+
+
+\pgfplotsset{compat=1.18}
+
+\sisetup{
+    per-mode=symbol,
+    exponent-product=\cdot,
+    output-decimal-marker={.},
+    group-separator={,},
+    group-minimum-digits=4
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdftitle={Assignment 5 - Generator Design Tool}
+}
+
+% ------------------------------------------------------------
+% Document information
+% ------------------------------------------------------------
+\title{
+    \textbf{FENT2321}\\[0.3cm]
+    Wind Energy and Design of a Wind Turbine\\[0.5cm]
+    \Large Assignment 5: Generator Design Tool
+}
+
+\author{Markus Arntzen}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% ============================================================
+\section{Problem 1: Induced Voltage}
+% ============================================================
+
+% ------------------------------------------------------------
+% 1.1 Blade geometry
+% ------------------------------------------------------------
+\subsection{}
+\begin{equation}
+    \omega_m = 2\pi f = \frac{\pi \cdot RPM}{30} = \frac{\pi \cdot 1500}{30} = 157.1\frac{rad}{s}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    v_{lin} = \omega_m R = \omega_m \cdot (r + \frac{t_{coil}}{2}) =
+    157.1 \times \left(0.045 + \frac{0.010}{2}\right) = 7.85 \frac{m}{s}
+\end{equation}
+
+\subsection{}
+The loop length (longest part of the coil) laying perpendicular to the magnetic field lines
+will induce a voltage. The total length will be $2\times$ the length of one side, giving;
+$2\times l = 2\times 0.1m = 0.2m$.
+
+\subsection{}
+\begin{equation}
+    V = NBv(2l) = 50\cdot0.2\cdot7.85\cdot(2\cdot0.1) = 15.7V
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    V = \frac{NBv(2l)N_sf_w}{\sqrt{2}} = \frac{50\cdot0.2\cdot7.85\cdot(2\cdot0.1)\cdot2\cdot0.9}{\sqrt{2}} = 20.0V
+\end{equation}
+
+\vspace{0.5cm}
+
+\section{Problem 2: Resistance}
+\subsection{}
+\begin{equation}
+    L_{wind} = \left(2\cdot l + 2\cdot \frac{2\pi \left(r + \frac{t_{coil}}{2}\right)}{N_s}\right)\cdot L_{corr}
+    = \left(2\cdot0.1 + 2\cdot \frac{2\pi \left(0.045 + \frac{0.01}{2}\right)}{2}\right)\cdot 1.10
+    = 0.566m
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    L_{Cu} = L_{turn}N_{turn}N_sN_{phase} = 0.566\cdot50\cdot2\cdot1 = 56.6m
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    R_{Cu} = \frac{\rho_{Cu}(1 + \alpha_{Cu}(T-T_0))}{A_{Cu}}
+    = \frac{1.68\cdot10^{-8}(1 + 0.0039(30\degCel - 20\degCel))}{7.85\cdot10^{-7}}
+    = 0.022\frac{\Omega}{m}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+     R_{phase} = R_{Cu}L_{stator}c_c = 0.022\cdot56.6\cdot1.10 = 1.38\Omega
+\end{equation}
+
+\vspace{0.5cm}
+
+\section{Problem 3: Reactance and current}
+\subsection{}
+\begin{equation}
+    L_s = L_{s0}\left(\frac{N_{turn}}{N_0}\right)^2N_s
+    = 0.0008\cdot\left(\frac{50}{28}\right)^2\cdot2 = 5.10\cdot10^{-3}\unit{H}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    \omega_e = \omega_m\frac{N_{poles}}{2} = 157.1\frac{2}{2} = 157.1\frac{rad}{s}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    X_s = \omega_e L_s = 157.1\cdot5.10\cdot10^{-3} = 0.801\Omega
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    |I| = \frac{V_{ind}}{\sqrt{(R_s + R_L)^2 + X_s^2}}
+    = \frac{20}{\sqrt{(1.38+4.00)^2 + 0.801^2}}
+    = 3.67\unit{A}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    V_{term} = IR_L = 3.67\cdot4.00 = 14.7\unit{V}
+\end{equation}
+
+\vspace{0.5cm}
+
+\section{Problem 4: Power}
+\subsection{}
+\begin{equation}
+    P_{load} = N_{phase}I^2R_L = 1\cdot3.67^2\cdot4.00 = 54\unit{W}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    P_{loss_{Cu}} = N_{phase}I^2R_s = 1\cdot3.67^2\cdot1.38 = 18.7\unit{W}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    P_{loss_m} = \Frac{RPM}{RPM_0}P_{loss_0} + F_{loss\,\,offset}
+    = \Frac{1500}{1000}\cdot75 + 5 = 117.5\unit{W}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    P_{gen} = P_{load} + P_{loss_{Cu}} + P_{loss_m}
+    = 54 + 18.7 + 117.5 = 190.1\unit{W}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    \eta = \Frac{P_{out}}{P_{in}}100 = \Frac{54}{190.1}\cdot100 = 28.4\%
+\end{equation}
+
+\subsection{}
+\begin{equation}
+    T_{gen} = \Frac{P_{in}}{\omega_m} = \Frac{190.1}{157.1} = 1.211\unit{Nm}
+\end{equation}
+
+\subsection{}
+from assignment 4, the wind turbine torque came out as 1.2\,Nm which gives
+$T_{diff} = 0.011$ with $T_{gen} > T_{aero}$. This means that at this rotational speed
+$\omega_m$ will the generator brake the rotors speed until the torques become balanced.
+
+
+\end{document}
