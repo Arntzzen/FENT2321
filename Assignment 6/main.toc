@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{Problem 1: Operating point variables}{3}{section*.2}%
+\contentsline {section}{Problem 2: Changing the active length (Lactive, C26)}{3}{section*.4}%
+\contentsline {section}{Problem 3: Changing the number of turns (Nturn, C25))}{4}{section*.5}%
+\contentsline {section}{Problem 4: Changing the diameter of the copper wire (Dcu, C24)}{5}{section*.7}%
+\contentsline {section}{PART 2}{5}{section*.8}%
