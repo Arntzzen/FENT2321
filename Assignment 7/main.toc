@@ -3,3 +3,6 @@
 \contentsline {subsection}{\numberline {1.1}Generator geometry}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Generator performance}{3}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Induced voltage at no load}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Power curves}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Operating condition parameters}{4}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Discussion}{4}{subsubsection.1.2.4}%

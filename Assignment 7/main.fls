@@ -397,7 +397,19 @@ OUTPUT main.toc
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT ./3.2.2_plot.png
+INPUT ./3.2.2_plot.png
+INPUT ./3.2.2_plot.png
+INPUT ./3.2.2_plot.png
+INPUT ./3.2.2_plot.png
 INPUT c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT c:/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT c:/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
@@ -409,3 +421,4 @@ INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
