@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+% \usepackage{siunitx}
+
+% ------------------------------------------------------------
+% Custom commands
+% ------------------------------------------------------------
+\newcommand{\degCel}{\,^\circ\mathrm{C}}
+\newcommand{\Frac}[2]{\left(\frac{#1}{#2}\right)}
+\setlength{\parindent}{0pt}
+
+
+
+
+\pgfplotsset{compat=1.18}
+
+\sisetup{
+    per-mode=symbol,
+    exponent-product=\cdot,
+    output-decimal-marker={.},
+    group-separator={,},
+    group-minimum-digits=4
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdftitle={Assignment 5 - Generator Design Tool}
+}
+
+% ------------------------------------------------------------
+%                       Document information
+% ------------------------------------------------------------
+\title{
+    \textbf{FENT2321}\\[0.3cm]
+    Wind Energy and Design of a Wind Turbine\\[0.5cm]
+    \Large Assignment 7: Generator Design to match the blades - System design}
+
+\author{Markus Arntzen}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+
+% ------------------------------------------------------------
+%                       Sections
+% ------------------------------------------------------------
+\section{Problem 1: Operating point variables}
+
+\subsection{Generator geometry}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{|c|c|}
+        \hline
+        Poles & 4 \\
+        \hline
+        Phases & 1 \\
+        \hline
+        Coils & 4 \\
+        \hline
+        Length per coil & 22.3m \\
+        \hline
+        Copper wire diameter & 1.18mm \\
+        \hline
+        Number of turns per coil & 50 \\
+        \hline
+    \end{tabular}
+\end{center}
+    
+\subsection{Generator performance}
+\subsubsection{Induced voltage at no load}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{RPM} & \textbf{$E_A$ [V]} \\
+        \hline
+        RPM$_\text{design}$ - 300 & 73.3 \\
+        \hline
+        RPM$_\text{design}$ & 83.4 \\
+        \hline
+        RPM$_\text{design}$ + 300 & 93.5 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{document}
