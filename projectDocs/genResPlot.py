@@ -201,8 +201,7 @@ load_legend = [
 legend1 = ax.legend(
     handles=load_legend,
     title="Load resistance",
-    loc="upper left",
-    bbox_to_anchor=(0, 1)
+    loc="upper left"
 )
 
 ax.add_artist(legend1)
@@ -228,8 +227,27 @@ power_legend = [
 ax.legend(
     handles=power_legend,
     title="Power type",
+    loc="upper right"
+)
+
+ax.legend(
+    handles=power_legend,
+    title="Power type",
     loc="upper left",
-    bbox_to_anchor=(0.0925, 1)
+    bbox_to_anchor=(0.1525, 1)
+)
+
+ax.set_title("Mechanical Input Power vs Electrical Output Power")
+ax.set_xlabel("Rotational speed [RPM]")
+ax.set_ylabel("Power [W]")
+
+ax.grid(True)
+
+fig.tight_layout()
+fig.savefig(
+    OUTPUT_DIR / "03_power_balance.png",
+    dpi=300,
+    bbox_inches="tight"
 )
 
 
