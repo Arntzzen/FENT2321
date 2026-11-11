@@ -68,6 +68,14 @@ colors = plt.cm.viridis(
     [i / (len(loads) - 1) for i in range(len(loads))]
 )
 
+# phase_powers = pd.read_excel(
+#     EXCEL_FILE,
+#     sheet_name=SHEET_NAME,
+#     usecols="G, J, M",
+#     skiprows=11,
+#     nrows=15
+# )
+
 
 # ============================================================
 # GRAPH 1: ELECTRICAL OUTPUT POWER VS RPM
@@ -293,6 +301,409 @@ fig.savefig(
     dpi=300,
     bbox_inches="tight"
 )
+
+
+# ============================================================
+# GRAPH 5: POWER vs R_load
+# ============================================================
+
+# Filter measurements at design speed
+design_data = data[
+    data["n (rpm)"] == DESIGN_RPM
+].copy()
+
+# Sort by load resistance (ascending)
+design_data = design_data.sort_values(
+    by="Rload_approximated (ohm)"
+)
+
+fig, ax = plt.subplots()
+
+# Phase 1
+ax.plot(
+    design_data["Rload_approximated (ohm)"],
+    design_data["P1(W)"],
+    marker="o",
+    label="Phase 1"
+)
+
+# Phase 2
+ax.plot(
+    design_data["Rload_approximated (ohm)"],
+    design_data["P2(W)"],
+    marker="s",
+    label="Phase 2"
+)
+
+# Phase 3
+ax.plot(
+    design_data["Rload_approximated (ohm)"],
+    design_data["P3 (W)"],
+    marker="^",
+    label="Phase 3"
+)
+
+# Total electrical power
+ax.plot(
+    design_data["Rload_approximated (ohm)"],
+    design_data["Pload (W)"],
+    marker="D",
+    linestyle="--",
+    linewidth=2.5,
+    label="Total power"
+)
+
+ax.set_title(
+    f"Phase and Total Power vs Load Resistance ({DESIGN_RPM} RPM)"
+)
+
+ax.set_xlabel("Load resistance [Ω]")
+ax.set_ylabel("Electrical power [W]")
+
+ax.legend(title="Power type")
+ax.grid(True)
+
+fig.tight_layout()
+
+fig.savefig(
+    OUTPUT_DIR / "05_phase_total_power.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+
+
+
+
+# ============================================================
+# GRAPH 6: TOTAL POWER AND EFFICIENCY VS LOAD RESISTANCE
+# ============================================================
+
+fig, ax1 = plt.subplots()
+
+# Secondary y-axis for efficiency
+ax2 = ax1.twinx()
+
+rpms = sorted(data["n (rpm)"].unique())
+
+colors_rpm = plt.cm.viridis(
+    [i / (len(rpms) - 1) for i in range(len(rpms))]
+)
+
+for rpm, color in zip(rpms, colors_rpm):
+
+    subset = data[
+        data["n (rpm)"] == rpm
+    ].sort_values(
+        by="Rload_approximated (ohm)"
+    )
+
+    # Total electrical power
+    ax1.plot(
+        subset["Rload_approximated (ohm)"],
+        subset["Pload (W)"],
+        marker="o",
+        linestyle="-",
+        color=color,
+        linewidth=2,
+        label=f"{rpm:.0f} RPM"
+    )
+
+    # Efficiency
+    ax2.plot(
+        subset["Rload_approximated (ohm)"],
+        subset["efficiency (%)"],
+        marker="s",
+        linestyle="--",
+        color=color,
+        linewidth=2
+    )
+
+# Axis labels
+ax1.set_xlabel("Load resistance [Ω]")
+ax1.set_ylabel("Total electrical power [W]")
+ax2.set_ylabel("Efficiency [%]")
+
+ax1.set_title("Total Electrical Power and Efficiency vs Load Resistance")
+
+ax1.grid(True)
+
+# Legend 1: Rotational speed (colors)
+rpm_legend = [
+    Line2D(
+        [0], [0],
+        color=color,
+        linewidth=2,
+        label=f"{rpm:.0f} RPM"
+    )
+    for rpm, color in zip(rpms, colors_rpm)
+]
+
+legend1 = ax1.legend(
+    handles=rpm_legend,
+    title="Rotational speed",
+    loc="upper left"
+)
+
+ax1.add_artist(legend1)
+
+# Legend 2: Parameter (line styles)
+parameter_legend = [
+    Line2D(
+        [0], [0],
+        color="black",
+        linestyle="-",
+        marker="o",
+        label="Total electrical power"
+    ),
+    Line2D(
+        [0], [0],
+        color="black",
+        linestyle="--",
+        marker="s",
+        label="Efficiency"
+    )
+]
+
+ax1.legend(
+    handles=parameter_legend,
+    title="Parameter",
+    loc="upper right"
+)
+
+fig.tight_layout()
+
+fig.savefig(
+    OUTPUT_DIR / "06_total_power_efficiency.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+
+
+
+# ============================================================
+# GRAPH 7: PHASE VOLTAGE AND CURRENT VS LOAD RESISTANCE
+# ============================================================
+
+fig, axes = plt.subplots(
+    nrows=3,
+    ncols=2,
+    figsize=(13, 12),
+    sharex=True
+)
+
+phase_colors = ["tab:blue", "tab:orange", "tab:green"]
+
+voltage_columns = [
+    ("U1 (V)", "Phase 1"),
+    ("U2 (V)", "Phase 2"),
+    ("U3 (V)", "Phase 3")
+]
+
+current_columns = [
+    ("I1 (A)", "Phase 1"),
+    ("I2 (A)", "Phase 2"),
+    ("I3 (A)", "Phase 3")
+]
+
+for row, rpm in enumerate(rpms):
+
+    subset = data[
+        data["n (rpm)"] == rpm
+    ].sort_values(
+        by="Rload_approximated (ohm)"
+    )
+
+    ax_voltage = axes[row, 0]
+    ax_current = axes[row, 1]
+
+    # Plot voltage for each phase
+    for (column, label), color in zip(
+        voltage_columns, phase_colors
+    ):
+        ax_voltage.plot(
+            subset["Rload_approximated (ohm)"],
+            subset[column],
+            marker="o",
+            linewidth=2,
+            color=color,
+            label=label
+        )
+
+    # Plot current for each phase
+    for (column, label), color in zip(
+        current_columns, phase_colors
+    ):
+        ax_current.plot(
+            subset["Rload_approximated (ohm)"],
+            subset[column],
+            marker="o",
+            linewidth=2,
+            color=color,
+            label=label
+        )
+
+    # Titles
+    ax_voltage.set_title(f"Voltage at {rpm:.0f} RPM")
+    ax_current.set_title(f"Current at {rpm:.0f} RPM")
+
+    # Y-axis labels
+    ax_voltage.set_ylabel("Voltage [V]")
+    ax_current.set_ylabel("Current [A]")
+
+    # Legends
+    ax_voltage.legend(title="Phase")
+    ax_current.legend(title="Phase")
+
+    # Grid
+    ax_voltage.grid(True)
+    ax_current.grid(True)
+
+# X-axis labels
+axes[2, 0].set_xlabel("Load resistance [Ω]")
+axes[2, 1].set_xlabel("Load resistance [Ω]")
+
+fig.suptitle(
+    "Phase Voltage and Current vs Load Resistance",
+    fontsize=15,
+    y=1.01
+)
+
+fig.tight_layout()
+
+fig.savefig(
+    OUTPUT_DIR / "07_phase_voltage_current.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+
+
+
+# ============================================================
+# GRAPH 8: PHASE VOLTAGE VS LOAD RESISTANCE
+# ============================================================
+
+fig, axes = plt.subplots(
+    nrows=3,
+    ncols=1,
+    figsize=(10, 12),
+    sharex=True
+)
+
+phase_columns = [
+    ("U1 (V)", "Phase 1"),
+    ("U2 (V)", "Phase 2"),
+    ("U3 (V)", "Phase 3")
+]
+
+phase_colors = ["tab:blue", "tab:orange", "tab:green"]
+
+for ax, rpm in zip(axes, rpms):
+
+    subset = data[
+        data["n (rpm)"] == rpm
+    ].sort_values(
+        by="Rload_approximated (ohm)"
+    )
+
+    for (column, label), color in zip(
+        phase_columns, phase_colors
+    ):
+        ax.plot(
+            subset["Rload_approximated (ohm)"],
+            subset[column],
+            marker="o",
+            linewidth=2,
+            color=color,
+            label=label
+        )
+
+    ax.set_title(f"Phase Voltage at {rpm:.0f} RPM")
+    ax.set_ylabel("Voltage [V]")
+
+    ax.legend(title="Phase")
+    ax.grid(True)
+
+axes[-1].set_xlabel("Load resistance [Ω]")
+
+fig.suptitle(
+    "Phase Current vs Load Resistance",
+    fontsize=15
+)
+
+fig.tight_layout()
+
+fig.savefig(
+    OUTPUT_DIR / "08_phase_voltage.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+
+
+# ============================================================
+# GRAPH 9: PHASE CURRENT VS LOAD RESISTANCE
+# ============================================================
+
+fig, axes = plt.subplots(
+    nrows=3,
+    ncols=1,
+    figsize=(10, 12),
+    sharex=True
+)
+
+phase_columns = [
+    ("I1 (A)", "Phase 1"),
+    ("I2 (A)", "Phase 2"),
+    ("I3 (A)", "Phase 3")
+]
+
+phase_colors = ["tab:blue", "tab:orange", "tab:green"]
+
+for ax, rpm in zip(axes, rpms):
+
+    subset = data[
+        data["n (rpm)"] == rpm
+    ].sort_values(
+        by="Rload_approximated (ohm)"
+    )
+
+    for (column, label), color in zip(
+        phase_columns, phase_colors
+    ):
+        ax.plot(
+            subset["Rload_approximated (ohm)"],
+            subset[column],
+            marker="o",
+            linewidth=2,
+            color=color,
+            label=label
+        )
+
+    ax.set_title(f"Phase Current at {rpm:.0f} RPM")
+    ax.set_ylabel("Current [A]")
+
+    ax.legend(title="Phase")
+    ax.grid(True)
+
+axes[-1].set_xlabel("Load resistance [Ω]")
+
+fig.suptitle(
+    "Phase Current vs Load Resistance",
+    fontsize=15
+)
+
+fig.tight_layout()
+
+fig.savefig(
+    OUTPUT_DIR / "09_phase_current.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+
 
 
 # ============================================================
