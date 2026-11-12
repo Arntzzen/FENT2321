@@ -386,9 +386,7 @@ ax2 = ax1.twinx()
 
 rpms = sorted(data["n (rpm)"].unique())
 
-colors_rpm = plt.cm.viridis(
-    [i / (len(rpms) - 1) for i in range(len(rpms))]
-)
+colors_rpm = ["#0072B2", "#D55E00", "#009E73", "#7B61A8"]
 
 for rpm, color in zip(rpms, colors_rpm):
 
@@ -442,7 +440,8 @@ rpm_legend = [
 legend1 = ax1.legend(
     handles=rpm_legend,
     title="Rotational speed",
-    loc="upper left"
+    loc="upper right",
+    bbox_to_anchor=(0.76, 1.0)
 )
 
 ax1.add_artist(legend1)
